@@ -1,83 +1,190 @@
 @extends('layout.admin')
 @section('content')
-    <!-- MAIN CONTENT -->
-    <main class="flex-1 p-0">
+        <!-- MAIN CONTENT -->
+    <main class="flex-1 p-4 md:p-6 overflow-x-auto">
+        <div class="max-w-7xl mx-auto">
+            <!-- Título de la página -->
+            <header class="mb-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Biblioteca Admin</h1>
+                <p class="text-gray-600">Sistema de gestión bibliotecaria</p>
+            </header>
 
-    <div class="px-4 pt-2">
-    <!-- HERO -->
-    <section
-        class="relative h-[60vh] rounded-lg overflow-hidden mb-10 bg-center bg-cover"
-        style="background-image: url('https://media.istockphoto.com/id/539673956/es/foto/biblioteca-pasillo-con-estantes-de-madera-y-cientos-de-libros.jpg?s=612x612&w=0&k=20&c=zfoA76X6VP-YOqBBGcSKwIoc34HDr4rcmNd_DGv3sMw=');">
+            <!-- KPI Cards -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8" aria-label="Indicadores clave">
+                <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <header class="flex justify-between items-start mb-4">
+                        <h2 class="text-lg font-semibold text-gray-700">Total de libros</h2>
+                        <i class="fas fa-book text-blue-600 text-2xl"></i>
+                    </header>
+                    <p class="text-3xl font-bold text-gray-800">1,247</p>
+                    <p class="text-green-600 text-sm mt-2">
+                        <i class="fas fa-arrow-up mr-1"></i>5.2% desde el mes pasado
+                    </p>
+                </article>
 
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/60"></div>
+                <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <header class="flex justify-between items-start mb-4">
+                        <h2 class="text-lg font-semibold text-gray-700">Libros prestados</h2>
+                        <i class="fas fa-hand-holding-heart text-yellow-600 text-2xl"></i>
+                    </header>
+                    <p class="text-3xl font-bold text-gray-800">189</p>
+                    <p class="text-red-600 text-sm mt-2">
+                        <i class="fas fa-arrow-down mr-1"></i>2.1% desde el mes pasado
+                    </p>
+                </article>
 
-        <!-- Contenido -->
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center text-white p-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                Descubre un Mundo de Conocimiento
-            </h1>
-            <p class="text-lg md:text-xl mb-6 max-w-2xl">
-                Gestiona libros, usuarios y préstamos desde un solo lugar
-            </p>
-            <a href="#"
-            class="inline-block bg-blue-600 hover:bg-blue-700 px-10 py-3 rounded-full font-semibold transition">
-                Explorar
-            </a>
-        </div>
-    </section>
+                <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <header class="flex justify-between items-start mb-4">
+                        <h2 class="text-lg font-semibold text-gray-700">Usuarios activos</h2>
+                        <i class="fas fa-users text-green-600 text-2xl"></i>
+                    </header>
+                    <p class="text-3xl font-bold text-gray-800">543</p>
+                    <p class="text-green-600 text-sm mt-2">
+                        <i class="fas fa-arrow-up mr-1"></i>12.7% desde el mes pasado
+                    </p>
+                </article>
 
+                <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <header class="flex justify-between items-start mb-4">
+                        <h2 class="text-lg font-semibold text-gray-700">Devoluciones pendientes</h2>
+                        <i class="fas fa-clock text-orange-600 text-2xl"></i>
+                    </header>
+                    <p class="text-3xl font-bold text-gray-800">24</p>
+                    <p class="text-orange-600 text-sm mt-2">
+                        <i class="fas fa-exclamation-triangle mr-1"></i>3.4% desde ayer
+                    </p>
+                </article>
+            </section>
 
-        <!-- SERVICIOS -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <article class="bg-white p-6 rounded-lg shadow text-center">
-                <img
-                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-                    alt="Búsqueda de libros"
-                    class="w-full h-40 object-cover rounded-md mb-4">
+            <!-- Sección de Gestión de Libros -->
+            <section class="mb-8">
+                <header class="mb-4">
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800">Gestión de Libros</h2>
+                    <p class="text-gray-600">Administra el catálogo de libros de la biblioteca</p>
+                </header>
 
-                <h3 class="font-semibold text-xl mb-2">Búsqueda</h3>
-                <p class="text-gray-600">Encuentra libros fácilmente</p>
-            </article>
-
-            <article class="bg-white p-6 rounded-lg shadow text-center">
-                <img
-                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80"
-                    alt="Usuarios leyendo"
-                    class="w-full h-40 object-cover rounded-md mb-4">
-                <h3 class="font-semibold text-xl mb-2">Usuarios</h3>
-                <p class="text-gray-600">Control de lectores</p>
-            </article>
-
-            <article class="bg-white p-6 rounded-lg shadow text-center">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ751PtOLRic7JO9XCYqQnS6tddPSjgaT82zw&s"
-                    alt="Libros en estantería"
-                    class="w-full h-40 object-cover rounded-md mb-4">
-                <h3 class="font-semibold text-xl mb-2">Préstamos</h3>
-                <p class="text-gray-600">Historial y control</p>
-            </article>
-        </section>
+                <!-- Tabla de libros -->
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-700">
+                            <thead class="bg-gray-50 text-gray-600 uppercase text-xs font-semibold">
+                                <tr>
+                                    <th scope="col" class="px-6 py-4">TÍTULO</th>
+                                    <th scope="col" class="px-6 py-4">AUTOR</th>
+                                    <th scope="col" class="px-6 py-4">ISBN</th>
+                                    <th scope="col" class="px-6 py-4">CATEGORÍA</th>
+                                    <th scope="col" class="px-6 py-4">DISPONIBILIDAD</th>
+                                    <th scope="col" class="px-6 py-4">ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition">
+                                    <td class="px-6 py-4 font-medium">Cien años de soledad</td>
+                                    <td class="px-6 py-4">Gabriel García Márquez</td>
+                                    <td class="px-6 py-4">978-0307474728</td>
+                                    <td class="px-6 py-4">Literatura</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Disponible</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex gap-2">
+                                            <button class="text-blue-600 hover:text-blue-800" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="text-red-600 hover:text-red-800" title="Eliminar">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition">
+                                    <td class="px-6 py-4 font-medium">1984</td>
+                                    <td class="px-6 py-4">George Orwell</td>
+                                    <td class="px-6 py-4">978-0451524935</td>
+                                    <td class="px-6 py-4">Ciencia Ficción</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Prestado</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex gap-2">
+                                            <button class="text-blue-600 hover:text-blue-800" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="text-red-600 hover:text-red-800" title="Eliminar">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition">
+                                    <td class="px-6 py-4 font-medium">El Principito</td>
+                                    <td class="px-6 py-4">Antoine de Saint-Exupéry</td>
+                                    <td class="px-6 py-4">978-0156012195</td>
+                                    <td class="px-6 py-4">Infantil</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Disponible</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex gap-2">
+                                            <button class="text-blue-600 hover:text-blue-800" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="text-red-600 hover:text-red-800" title="Eliminar">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 </div>
 
-<!-- JS Vanilla -->
+<!-- JavaScript Vanilla -->
 <script>
-    const btnSidebar = document.getElementById('btnSidebar');
-    const sidebar = document.getElementById('sidebar');
+    (function() {
+        const btnSidebar = document.getElementById('btnSidebar');
+        const sidebar = document.getElementById('sidebar');
 
-    btnSidebar.addEventListener('click', () => {
-        sidebar.classList.toggle('-translate-x-full');
-    });
+        if (btnSidebar && sidebar) {
+            // Toggle sidebar
+            btnSidebar.addEventListener('click', (e) => {
+                e.stopPropagation();
+                sidebar.classList.toggle('-translate-x-full');
+            });
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-            sidebar.classList.remove('-translate-x-full');
-        } else {
-            sidebar.classList.add('-translate-x-full');
+            // Cerrar sidebar al hacer clic fuera (en móvil)
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth < 768) {
+                    const isClickInsideSidebar = sidebar.contains(e.target);
+                    const isClickOnButton = btnSidebar.contains(e.target);
+                    
+                    if (!isClickInsideSidebar && !isClickOnButton && !sidebar.classList.contains('-translate-x-full')) {
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                }
+            });
+
+            // Manejar resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    sidebar.classList.remove('-translate-x-full');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            });
         }
-    });
+
+        // Animación suave para los KPIs
+        const kpiCards = document.querySelectorAll('article.bg-white');
+        kpiCards.forEach((card, index) => {
+            card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+        });
+    })();
 </script>
 
 </body>
