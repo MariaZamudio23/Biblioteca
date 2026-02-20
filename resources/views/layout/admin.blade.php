@@ -45,7 +45,7 @@
             <a href="#" class="hover:text-blue-200">Inicio</a>
             <a href="#" class="hover:text-blue-200">Usuarios</a>
             <a href="#" class="hover:text-blue-200">Libros</a>
-            <a href="#" class="hover:text-blue-200">Préstamos</a>
+            <a href="{{ route('categorias.index') }}" class="hover:text-blue-200">Categorías</a>
             <a href="#" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold transition">
                 <i class="fas fa-sign-out-alt mr-2"></i>Salir
             </a>
@@ -72,8 +72,8 @@
                 <a href="#" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-book w-5"></i> Libros
                 </a>
-                <a href="#" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
-                    <i class="fas fa-hand-holding-heart w-5"></i> Préstamos
+                <a href="{{ route('categorias.index') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
+                    <i class="fas fa-tags w-5"></i> Categorías
                 </a>
                 <a href="{{ route('logout') }}" class="flex items-center gap-3 p-3 text-red-600 hover:bg-red-50 hover:text-red-800 rounded-lg transition mt-6">
                     <i class="fas fa-sign-out-alt w-5"></i> Salir
