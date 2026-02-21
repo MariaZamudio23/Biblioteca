@@ -46,7 +46,7 @@
             <a href="#" class="hover:text-blue-200">Usuarios</a>
             <a href="#" class="hover:text-blue-200">Libros</a>
             <a href="{{ route('categorias.index') }}" class="hover:text-blue-200">Categorías</a>
-            <a href="#" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold transition">
+            <a href="{{ route('logout') }}" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold transition">
                 <i class="fas fa-sign-out-alt mr-2"></i>Salir
             </a>
         </nav>
@@ -85,7 +85,7 @@
     
     @yield('content')
 
-    @include('partials.auth.footer')
+   
 
 
 

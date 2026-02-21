@@ -58,9 +58,15 @@
 
             <!-- Sección de Gestión de Libros -->
             <section class="mb-8">
-                <header class="mb-4">
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-800">Gestión de Libros</h2>
-                    <p class="text-gray-600">Administra el catálogo de libros de la biblioteca</p>
+                <header class="mb-4 flex flex-wrap items-center justify-between">
+                    <div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">Gestión de Libros</h2>
+                        <p class="text-gray-600">Administra el catálogo de libros de la biblioteca</p>
+                    </div>
+                    
+                    <a href="{{ route('libros.create') }}" class="mt-3 sm:mt-0 inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 transition">
+                        <i class="fas fa-plus mr-2"></i>Agregar Libro
+                    </a>
                 </header>
 
                 <!-- Tabla de libros -->
@@ -78,11 +84,12 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200">
+                                @foreach($libros as $libro)
                                 <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium">Cien años de soledad</td>
-                                    <td class="px-6 py-4">Gabriel García Márquez</td>
-                                    <td class="px-6 py-4">978-0307474728</td>
-                                    <td class="px-6 py-4">Literatura</td>
+                                    <td class="px-6 py-4 font-medium">{{ $libro->nombre }}</td>
+                                    <td class="px-6 py-4">{{ $libro->autor }}</td>
+                                    <td class="px-6 py-4">{{ $libro->isbn }}</td>
+                                    <td class="px-6 py-4">{{ $libro->categoria }}</td>
                                     <td class="px-6 py-4">
                                         <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Disponible</span>
                                     </td>
@@ -95,46 +102,9 @@
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </div>
-                                    </td>
+                                    </td> 
                                 </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium">1984</td>
-                                    <td class="px-6 py-4">George Orwell</td>
-                                    <td class="px-6 py-4">978-0451524935</td>
-                                    <td class="px-6 py-4">Ciencia Ficción</td>
-                                    <td class="px-6 py-4">
-                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Prestado</span>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex gap-2">
-                                            <button class="text-blue-600 hover:text-blue-800" title="Editar">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="text-red-600 hover:text-red-800" title="Eliminar">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4 font-medium">El Principito</td>
-                                    <td class="px-6 py-4">Antoine de Saint-Exupéry</td>
-                                    <td class="px-6 py-4">978-0156012195</td>
-                                    <td class="px-6 py-4">Infantil</td>
-                                    <td class="px-6 py-4">
-                                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Disponible</span>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex gap-2">
-                                            <button class="text-blue-600 hover:text-blue-800" title="Editar">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="text-red-600 hover:text-red-800" title="Eliminar">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
