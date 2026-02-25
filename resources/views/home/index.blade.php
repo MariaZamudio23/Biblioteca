@@ -89,18 +89,22 @@
                                     <td class="px-6 py-4 font-medium">{{ $libro->nombre }}</td>
                                     <td class="px-6 py-4">{{ $libro->autor }}</td>
                                     <td class="px-6 py-4">{{ $libro->isbn }}</td>
-                                    <td class="px-6 py-4">{{ $libro->categoria }}</td>
+                                    <td class="px-6 py-4">{{ $libro->categoria->nombre}}</td>
                                     <td class="px-6 py-4">
                                         <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Disponible</span>
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="flex gap-2">
-                                            <button class="text-blue-600 hover:text-blue-800" title="Editar">
+                                            <a href="{{ route('libros.edit', $libro->id) }}" class="text-blue-600 hover:text-blue-800" title="Editar">
                                                 <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="text-red-600 hover:text-red-800" title="Eliminar">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
+                                            </a>
+                                            <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" class="inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-red-600 hover:text-red-800" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
                                         </div>
                                     </td> 
                                 </tr>

@@ -42,9 +42,9 @@
 
         <!-- Menú Header -->
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="#" class="hover:text-blue-200">Inicio</a>
+            <a href="{{ route('home') }}" class="hover:text-blue-200">Inicio</a>
             <a href="#" class="hover:text-blue-200">Usuarios</a>
-            <a href="#" class="hover:text-blue-200">Libros</a>
+            <a href="{{ route('libros.create') }}" class="hover:text-blue-200">Libros</a>
             <a href="{{ route('categorias.index') }}" class="hover:text-blue-200">Categorías</a>
             <a href="{{ route('logout') }}" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold transition">
                 <i class="fas fa-sign-out-alt mr-2"></i>Salir
@@ -66,10 +66,10 @@
             </div>
             
             <nav class="space-y-2">
-                <a href="#" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
+                <a href="{{ route('home') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-home w-5"></i> Inicio
                 </a>
-                <a href="#" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
+                <a href="{{ route('libros.create') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-book w-5"></i> Libros
                 </a>
                 <a href="{{ route('categorias.index') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">

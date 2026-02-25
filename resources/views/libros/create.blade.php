@@ -28,7 +28,7 @@
 
             <div class="mb-4">
                 <label for="categoria" class="block text-gray-700 font-bold mb-2">Categoría:</label>
-                <select name="categoria" id="categoria" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <select name="categoria" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     <option value="">Seleccione una categoría</option>
                     @foreach($categorias as $categoria)
                         <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
@@ -36,8 +36,8 @@
                 </select>
             </div>
             <div class="flex items-center justify-end">
-                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Guardar</button>
-                <a href="{{ route('home') }}" class="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-gray-800 ml-4">Cancelar</a>
+                <a href="{{ route('libros.store') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Guardar</a>
+                <a href="#" class="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-gray-800 ml-4">Cancelar</a>
             </div>
         </form>
     </div>
