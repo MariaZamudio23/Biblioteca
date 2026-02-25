@@ -17,9 +17,6 @@
                         <i class="fas fa-book text-blue-600 text-2xl"></i>
                     </header>
                     <p class="text-3xl font-bold text-gray-800">1,247</p>
-                    <p class="text-green-600 text-sm mt-2">
-                        <i class="fas fa-arrow-up mr-1"></i>5.2% desde el mes pasado
-                    </p>
                 </article>
 
                 <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -28,9 +25,6 @@
                         <i class="fas fa-hand-holding-heart text-yellow-600 text-2xl"></i>
                     </header>
                     <p class="text-3xl font-bold text-gray-800">189</p>
-                    <p class="text-red-600 text-sm mt-2">
-                        <i class="fas fa-arrow-down mr-1"></i>2.1% desde el mes pasado
-                    </p>
                 </article>
 
                 <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -39,9 +33,6 @@
                         <i class="fas fa-users text-green-600 text-2xl"></i>
                     </header>
                     <p class="text-3xl font-bold text-gray-800">543</p>
-                    <p class="text-green-600 text-sm mt-2">
-                        <i class="fas fa-arrow-up mr-1"></i>12.7% desde el mes pasado
-                    </p>
                 </article>
 
                 <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -50,9 +41,6 @@
                         <i class="fas fa-clock text-orange-600 text-2xl"></i>
                     </header>
                     <p class="text-3xl font-bold text-gray-800">24</p>
-                    <p class="text-orange-600 text-sm mt-2">
-                        <i class="fas fa-exclamation-triangle mr-1"></i>3.4% desde ayer
-                    </p>
                 </article>
             </section>
 
@@ -111,6 +99,11 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        
+                        <!-- PAGINACION -->
+                            <div class="px-6 py-4 border-gray-200 flex items-center justify-between"
+                                {{$libros->links()}}
+                            </div>
                     </div>
                 </div>
             </section>

@@ -39,6 +39,10 @@
                     @endforeach
                 </tbody>
             </table>
+            <!-- PAGINACION -->
+                <div class="px-6 py-4 border-gray-200 flex items-center justify-between"
+                    {{$categorias->links()}}
+                </div>
         </div>        
     </div>
 @endsection    

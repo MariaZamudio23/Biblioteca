@@ -33,7 +33,7 @@ class LibrosController extends Controller
         $libro->categoria_id = $request->categoria;
         $libro->save();
 
-        return redirect()->route('home')->with('success', 'Libro agregado exitosamente');
+        return redirect()->route('home')->with('success', 'Libro creado exitosamente');
     }
 
     public function edit($id)

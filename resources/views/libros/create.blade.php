@@ -36,8 +36,8 @@
                 </select>
             </div>
             <div class="flex items-center justify-end">
-                <a href="{{ route('libros.store') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Guardar</a>
-                <a href="#" class="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-gray-800 ml-4">Cancelar</a>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Guardar</button>
+                <a href="{{ route('home') }}" class="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-gray-800 ml-4">Cancelar</a>
             </div>
         </form>
     </div>
