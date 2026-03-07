@@ -69,11 +69,17 @@
                 <a href="{{ route('home') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-home w-5"></i> Inicio
                 </a>
+                <a href="#" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
+                    <i class="fas fa-book w-5"></i> Usuarios
+                </a>
                 <a href="{{ route('libros.create') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-book w-5"></i> Libros
                 </a>
                 <a href="{{ route('categorias.index') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-tags w-5"></i> Categorías
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
+                    <i class="fas fa-book w-5"></i> Préstamos
                 </a>
                 <a href="{{ route('logout') }}" class="flex items-center gap-3 p-3 text-red-600 hover:bg-red-50 hover:text-red-800 rounded-lg transition mt-6">
                     <i class="fas fa-sign-out-alt w-5"></i> Salir
