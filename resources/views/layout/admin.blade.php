@@ -84,6 +84,27 @@
                 <a href="{{ route('logout') }}" class="flex items-center gap-3 p-3 text-red-600 hover:bg-red-50 hover:text-red-800 rounded-lg transition mt-6">
                     <i class="fas fa-sign-out-alt w-5"></i> Salir
                 </a>
+                @auth
+                <div class="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                    <div class="flex items-center gap-3">
+                        <!--<div class="text-blue-700 text-2xl">
+                            <i class="fas fa-user-circle"></i>
+                        </div>-->
+
+                        <div>
+                            <p class="font-semibold text-gray-800">
+                                {{ Auth::user()->name }}
+                            </p>
+                            <p class="text-xs text-blue-600">
+                                {{ Auth::user()->user_type }}
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                {{ Auth::user()->email }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endauth
             </nav>
         </div>
     </aside>
@@ -91,7 +112,9 @@
     
     @yield('content')
 
-   
+</div>
 
+@include('partials.auth.footer')
 
-
+</body>
+</html>
