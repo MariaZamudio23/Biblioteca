@@ -28,11 +28,12 @@
                     <td class="px-4 py-2 border-b">{{ $usuario->user_type }}</td>
                     <td class="px-4 py-2 border-b">
                         <a href="{{ route('usuarios.edit', $usuario->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Editar</a>
-                        <form action="#" method="POST" style="display:inline-block;">
+                        <a href="{{ route('usuarios.delete_confirm', $usuario->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded ml-2">Eliminar</a>
+                        <!--<form action="#" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded ml-2"" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">Eliminar</button>
-                        </form>
+                        </form>*-->
                     </td>
                 </tr>
             @endforeach
