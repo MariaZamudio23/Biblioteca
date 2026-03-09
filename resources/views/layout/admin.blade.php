@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login | BiblioTech</title>
+    <title>Login | BiblioBurton</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -37,7 +37,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <span class="text-xl font-bold tracking-wide">BiblioTech</span>
+            <span class="text-xl font-bold tracking-wide">BiblioBurton</span>
         </div>
 
         <!-- Menú Header -->
@@ -46,6 +46,7 @@
             <a href="{{ route('usuarios.index') }}" class="hover:text-blue-200">Usuarios</a>
             <a href="{{ route('libros.create') }}" class="hover:text-blue-200">Libros</a>
             <a href="{{ route('categorias.index') }}" class="hover:text-blue-200">Categorías</a>
+            <a href="{{ route('prestamos.index') }}" class="hover:text-blue-200">Préstamos</a>
             <a href="{{ route('logout') }}" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold transition">
                 <i class="fas fa-sign-out-alt mr-2"></i>Salir
             </a>
@@ -61,9 +62,6 @@
                   transition-transform duration-300 z-40 overflow-y-auto">
         
         <div class="p-6">
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h2 class="font-bold text-gray-800">Menú Principal</h2>
-            </div>
             
             <nav class="space-y-2">
                 <a href="{{ route('home') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
@@ -78,7 +76,7 @@
                 <a href="{{ route('categorias.index') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-tags w-5"></i> Categorías
                 </a>
-                <a href="#" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
+                <a href="{{ route('prestamos.index') }}" class="flex items-center gap-3 p-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">
                     <i class="fas fa-book w-5"></i> Préstamos
                 </a>
                 <a href="{{ route('logout') }}" class="flex items-center gap-3 p-3 text-red-600 hover:bg-red-50 hover:text-red-800 rounded-lg transition mt-6">
@@ -86,11 +84,11 @@
                 </a>
                 @auth
                 <div class="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                
                     <div class="flex items-center gap-3">
                         <!--<div class="text-blue-700 text-2xl">
                             <i class="fas fa-user-circle"></i>
                         </div>-->
-
                         <div>
                             <p class="font-semibold text-gray-800">
                                 {{ Auth::user()->name }}
