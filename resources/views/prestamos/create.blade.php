@@ -17,11 +17,11 @@
             <input type="text" name="usuario_nombre" id="usuario_nombre" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
-
         <div class="flex items-center justify-end">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buscar</button>
             <a href="{{ route('prestamos.index') }}" class="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-gray-800 ml-4">Cancelar</a>
         </div>
+    </form>
 
         @isset($usuario)
             <div class="mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
@@ -30,9 +30,13 @@
                 <p><strong>Nombre:</strong> {{ $usuario->name }}</p>
                 <p><strong>Email:</strong> {{ $usuario->email }}</p>
             </div>
+
+            <form action="{{ route('prestamos.select_libro') }}" method="POST">
+                @csrf
+                <input type="hidden" name="usuario_id" value="{{ $usuario->id }}">
+                <input type="submit" value="Seleccionar Libro" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
+            </form> 
         @endisset
-        
-    </form>
 </div>
 
 @endsection
