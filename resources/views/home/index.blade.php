@@ -79,7 +79,11 @@
                                     <td class="px-6 py-4">{{ $libro->isbn }}</td>
                                     <td class="px-6 py-4">{{ $libro->categoria->nombre}}</td>
                                     <td class="px-6 py-4">
-                                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Disponible</span>
+                                        @if($libro->estatus == 0)
+                                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Disponible</span>
+                                        @else
+                                            <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Prestado</span>
+                                        @endif
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="flex gap-2">

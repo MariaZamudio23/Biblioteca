@@ -13,36 +13,38 @@
 
         <a href="{{ route('categorias.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">Agregar categoria</a>
 
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <table class="min-w-full table-auto">
-                <thead>
-                    <tr class="bg-gray-100">
-                        <th class="px-4 py-2 text-left">ID</th>
-                        <th class="px-4 py-2 text-left">Nombre</th>
-                        <th class="px-4 py-2 text-left">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($categorias as $categoria)
-                        <tr class="border-t">
-                            <td class="px-4 py-2 border-b">{{ $categoria->id }}</td>
-                            <td class="px-4 py-2 border-b">{{ $categoria->nombre }}</td>                            
-                            <td class="px-4 py-2 border-b">
-                                <a href="{{ route('categorias.edit', $categoria->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Editar</a>
-                                <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST" class="inline-block">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded ml-2">Eliminar</button>
-                                </form>
-
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-700">
+                    <thead class="bg-gray-50 text-gray-600 uppercase text-xs font-semibold">
+                        <tr>
+                            <th scope="col" class="px-6 py-4">ID</th>
+                            <th scope="col" class="px-6 py-4">NOMBRE</th>
+                            <th scope="col" class="px-6 py-4">ACCIONES</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        @foreach($categorias as $categoria)
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="px-6 py-4 font-medium">{{ $categoria->id }}</td>
+                                <td class="px-6 py-4">{{ $categoria->nombre }}</td>                            
+                                <td class="px-6 py-4">
+                                    <a href="{{ route('categorias.edit', $categoria->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Editar</a>
+                                    <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST" class="inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded ml-2">Eliminar</button>
+                                    </form>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
             <!-- PAGINACION -->
                 <div class="px-6 py-4 border-gray-200 flex items-center justify-between"
                     {{$categorias->links()}}
                 </div>
-        </div>        
-    </div>
+    </div>        
+</div>
 @endsection    

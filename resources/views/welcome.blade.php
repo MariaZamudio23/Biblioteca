@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Biblioteca | BiblioTech</title>
+    <title>Biblioteca | BiblioBurton</title>
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,7 +25,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <span class="text-xl font-bold tracking-wide">BiblioTech</span>
+            <span class="text-xl font-bold tracking-wide">BiblioBurton</span>
         </div>
 
         <!-- Menú Header -->
@@ -125,7 +125,7 @@
 <!-- FOOTER -->
 <footer class="bg-gray-800 text-gray-300 mt-10">
     <div class="text-center py-6 text-sm">
-        © 2024 BiblioTech · Todos los derechos reservados
+        © 2026 BiblioBurton · Todos los derechos reservados
     </div>
 </footer>
 
