@@ -16,7 +16,7 @@
                         <h2 class="text-lg font-semibold text-gray-700">Total de libros</h2>
                         <i class="fas fa-book text-blue-600 text-2xl"></i>
                     </header>
-                    <p class="text-3xl font-bold text-gray-800">1,247</p>
+                    <p class="text-3xl font-bold text-gray-800">{{ $total_libros }}</p>
                 </article>
 
                 <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -24,7 +24,7 @@
                         <h2 class="text-lg font-semibold text-gray-700">Libros prestados</h2>
                         <i class="fas fa-hand-holding-heart text-yellow-600 text-2xl"></i>
                     </header>
-                    <p class="text-3xl font-bold text-gray-800">189</p>
+                    <p class="text-3xl font-bold text-gray-800">{{ $libros_prestados }}</p>
                 </article>
 
                 <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -32,7 +32,7 @@
                         <h2 class="text-lg font-semibold text-gray-700">Usuarios activos</h2>
                         <i class="fas fa-users text-green-600 text-2xl"></i>
                     </header>
-                    <p class="text-3xl font-bold text-gray-800">543</p>
+                    <p class="text-3xl font-bold text-gray-800">{{ $total_usuarios }}</p>
                 </article>
 
                 <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -40,7 +40,7 @@
                         <h2 class="text-lg font-semibold text-gray-700">Devoluciones pendientes</h2>
                         <i class="fas fa-clock text-orange-600 text-2xl"></i>
                     </header>
-                    <p class="text-3xl font-bold text-gray-800">24</p>
+                    <p class="text-3xl font-bold text-gray-800">{{ $devoluciones_pendientes }}</p>
                 </article>
             </section>
 
