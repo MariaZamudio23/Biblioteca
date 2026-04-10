@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     libpng-dev \
-    libonig-dev \S
+    libonig-dev \
     libxml2-dev \
     zip \
     curl \
