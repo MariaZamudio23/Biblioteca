@@ -90,15 +90,11 @@
                             <i class="fas fa-user-circle"></i>
                         </div>-->
                         <div>
-                            <p class="font-semibold text-gray-800">
-                                {{ Auth::user()->name }}
-                            </p>
-                            <p class="text-xs text-blue-600">
-                                {{ Auth::user()->user_type }}
-                            </p>
-                            <p class="text-xs text-gray-500">
-                                {{ Auth::user()->email }}
-                            </p>
+                            <p class="font-semibold text-gray-800"><a href="{{ route('usuarios.profile') }}">{{ Auth::user()->name }}</a></p>
+
+                            <p class="text-xs text-blue-600">{{ Auth::user()->user_type }}</p>
+
+                            <p class="text-xs text-gray-500">{{ Auth::user()->email }}</p>
                         </div>
                     </div>
                 </div>
