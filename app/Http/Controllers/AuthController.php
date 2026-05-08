@@ -1,6 +1,10 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+use App\Mail\UsuarioRegistrado;
+use Illuminate\Support\Facades\Mail;
+
 class AuthController extends Controller
 {
     public function loginForm()
@@ -27,6 +31,8 @@ class AuthController extends Controller
 
         #Redirigir o iniciar sesión automáticamente
         auth()->login($user);
+        Mail::to($user->email)->queue(new UsuarioRegistrado($user));
+
         return redirect()->route('home');
     }
 
